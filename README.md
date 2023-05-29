@@ -13,7 +13,7 @@ N/A
 
 Simply open the app by going to https://silvag6271.github.io/Work-Day-Scheduler-JS/ and start entering your scheduled events.
 
-![table with rows that are color-coded based on time in relation to current time, save button on right side of rows](assets/images/Event planner.jpeg)
+![table with rows that are color-coded based on time in relation to current time, save button on right side of rows](assets/planner.jpeg)
 
 ## Usage
 Keep track of your daily schedule by using this app to save events. Just enter your event in the block corresponding to it's time and push the save icon. The color-coding will visually alert you to whether the event is a past, present or future one.
