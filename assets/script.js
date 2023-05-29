@@ -5,18 +5,25 @@ var timeColorChange = $(".time-block")
 var currentHour = parseInt(dayjs().hour());
 
 
+
 $(document).ready(function(){
   var today = dayjs();
   $("#currentDay").text(today.format("dddd MMMM YYYY, h:mm a"));
   });
 
 
-  $(saveBtn).on("click", function () {
+  $(".saveBtn").on("click", function () {
 
-    var calEvent = $(this).siblings("texarea").val();
-    var hourEvent = $(this).parents(".time-block").attr("id");
+    var calEvent = $(this).siblings(".description").val();
+    var hourEvent = $(this).parent().attr("id");
+   
 
-    localStorage.setItem(calEvent, hourEvent);
+    localStorage.setItem(hourEvent, calEvent);
+
+    console.log(calEvent);
+
+    $(this).val(localStorage.getItem(hourEvent, calEvent));
+    
 
     
 
@@ -43,8 +50,8 @@ $(document).ready(function(){
       $(this).removeClass("present");
       $(this).addClass("future");
 
-      $(this).val(localStorage.getItem(hourId));
-      console.log(hourId);
+     
+      
     }
 
 
@@ -52,8 +59,8 @@ $(document).ready(function(){
 
     });
 
-;
-    
+
+
     
   
 
