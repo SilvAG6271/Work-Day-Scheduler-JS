@@ -5,11 +5,21 @@ var timeColorChange = $(".time-block")
 var currentHour = parseInt(dayjs().hour());
 
 
-
 $(document).ready(function(){
   var today = dayjs();
   $("#currentDay").text(today.format("dddd MMMM YYYY, h:mm a"));
+  
   });
+
+  $(".time-block").each(function () {
+    var id = $(this).attr("id");
+    var eventSchedule = localStorage.getItem(id);
+
+    if (eventSchedule !== null) {
+        $(this).children(".description").val(eventSchedule);
+    }
+});
+
 
 
   $(".saveBtn").on("click", function () {
@@ -20,11 +30,13 @@ $(document).ready(function(){
 
     localStorage.setItem(hourEvent, calEvent);
 
-    console.log(calEvent);
+    console.log(hourEvent, calEvent);
 
-    $(this).val(localStorage.getItem(hourEvent, calEvent));
     
-
+   
+ 
+       
+    
     
 
 
@@ -54,8 +66,8 @@ $(document).ready(function(){
       
     }
 
-
-
+    
+   
 
     });
 
